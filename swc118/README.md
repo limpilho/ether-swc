@@ -25,8 +25,15 @@ modifier function{
 
 ### *Constructor*
 
-- 컨트랙트 생성 시, 실행되는
-
+- 컨트랙트 생성 후, 배포될 때 호출되며, 테스트넷에서는 첫번째 계약 주소로 owner가 설정됨
+- 생성자는 1개만 작성할 수 있으며, 필수로 작성하지 않아도 됨
+- `internal`, `public`으로만 지정하여 사용할 수 있음
+- 기본구조
+```jsx
+constructor() public {
+  owner = msg.sender;
+}
+```
 ---
 
 ## *swc115 - Vulnerability Code*
